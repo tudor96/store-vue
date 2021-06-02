@@ -108,24 +108,7 @@ export const products: Module<ProductsState, RootState> = {
   state,
   mutations,
   actions,
-  // Namespacing Vuex modules is tricky and hard to type check with typescript.
-  // Instead of namespacing, we could create our own namespacing mechanism by
-  // prefixing the value of the TypeScript enum with the namespace, e.g.
-  // enum TodoActions {
-  //   AddTodo = 'TODO__ADD_TODO'
-  // }
-  // namespaced: true,
   getters,
 };
 
-// const getters = {
-//     allProducts: (state: State) : ProductInterface[]=> state.products
-// }
 
-// const actions = {
-//     async fetchProducts({ commit }: AugmentedActionContext) {
-//         const newProducts = await apiFactory().data.products().getAllProducts();
-//         commit('setProducts')
-//     }
-
-// }
