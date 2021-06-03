@@ -1,34 +1,28 @@
 <template>
   <div class="home">
-    <Products v-bind:products="products" />
+    <Products :products="products" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { Getter, Action } from 'vuex-class';
-import Products from '@/components/Products.vue'; // @ is an alias to /src
-import { ProductInterface } from '../interfaces/products.interface';
-import { apiFactory } from '../api';
-
-@Component({
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
+import Products from '@/components/Products.vue';
+export default {
   components: {
     Products,
   },
-})
-export default class Home extends Vue {
-  //   products: ProductInterface[] = [];
+  setup() {
+    const store = useStore();
 
-  @Getter('allProducts') products: ProductInterface[];
+    const getAllProducts = async () => {
+      store.dispatch('products/action/GET_ALL_PRODUCTS');
+    };
 
-  @Action('products/action/GET_ALL_PRODUCTS') fetchProducts: any;
-  async mounted() {
-    // const newProducts = await apiFactory().data.products().getAllProducts();
-    this.fetchProducts();
-    // this.products = newProducts;
-    // console.log(newProducts);
-  }
-}
+    onMounted(getAllProducts);
+    return {
+      products: computed(() => store.getters.allProducts),
+    };
+  },
+};
 </script>
-
-<style scoped></style>

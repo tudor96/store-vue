@@ -110,5 +110,3 @@ export const products: Module<ProductsState, RootState> = {
   actions,
   getters,
 };
-
-

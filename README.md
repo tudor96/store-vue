@@ -1,4 +1,4 @@
-# blog_typescript
+# v3_store_type
 
 ## Project setup
 ```

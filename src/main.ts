@@ -1,17 +1,9 @@
-import Vue from "vue";
+import "@babel/polyfill";
+import "mutationobserver-shim";
+import { createApp } from "vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
 
-Vue.config.productionTip = false;
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
-new Vue({
-  router,
-  store,
-  render: (h) => h(App),
-}).$mount("#app");
+createApp(App).use(store).use(router).mount("#app");

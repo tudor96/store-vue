@@ -16,11 +16,11 @@ export async function sendPostRequest<T>(
     },
   };
   return await axios.post(url, body, conf);
-//   try {
-    
-//   } catch (e) {
-//     throw e;
-//   }
+  //   try {
+
+  //   } catch (e) {
+  //     throw e;
+  //   }
 }
 
 export async function sendImageRequest<T>(
@@ -38,10 +38,10 @@ export async function sendImageRequest<T>(
     },
   };
   return await axios.post(url, body, conf);
-//   try {
-//   } catch (e) {
-//     throw e;
-//   }
+  //   try {
+  //   } catch (e) {
+  //     throw e;
+  //   }
 }
 
 export async function sendGetRequest(
@@ -59,10 +59,10 @@ export async function sendGetRequest(
   };
 
   return await axios.get(url, conf);
-//   try {
-//   } catch (e) {
-//     throw e;
-//   }
+  //   try {
+  //   } catch (e) {
+  //     throw e;
+  //   }
 }
 
 export async function sendPutRequest<T>(
@@ -80,10 +80,10 @@ export async function sendPutRequest<T>(
     },
   };
   return await axios.put(url, body, conf);
-//   try {
-//   } catch (e) {
-//     throw e;
-//   }
+  //   try {
+  //   } catch (e) {
+  //     throw e;
+  //   }
 }
 
 export async function sendDeleteRequest<T>(
@@ -100,8 +100,8 @@ export async function sendDeleteRequest<T>(
     },
   };
   return await axios.delete(url, conf);
-//   try {
-//   } catch (e) {
-//     throw e;
-//   }
+  //   try {
+  //   } catch (e) {
+  //     throw e;
+  //   }
 }
