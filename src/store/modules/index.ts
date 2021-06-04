@@ -1,5 +1,7 @@
 import { products } from "./products";
+import { cart } from "./cart";
 
 export default {
-  products,
+	products,
+	cart,
 };

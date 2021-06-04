@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import { useStore } from "vuex";
 import Products from "@/components/Products.vue";
 import SearchItem from "@/components/SearchItem.vue";
@@ -21,14 +21,9 @@ export default {
 	setup() {
 		const store = useStore();
 
-		const getAllProducts = async () => {
-			store.dispatch("products/action/GET_ALL_PRODUCTS");
-		};
 		const setSearchOption = async (value: string) => {
 			store.dispatch("products/action/SET_SEARCH_PRODUCT", value);
 		};
-
-		onMounted(getAllProducts);
 
 		function onSearch(value: string) {
 			setSearchOption(value);

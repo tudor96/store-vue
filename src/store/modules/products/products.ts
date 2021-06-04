@@ -92,6 +92,9 @@ export const actions: ActionTree<ProductsState, RootState> & Actions = {
 
 export type Getters = {
 	allProducts(state: ProductsState): ProductInterface[];
+	singleProduct(
+		state: ProductsState
+	): (productId: number) => ProductInterface | undefined;
 	getSearchInput(state: ProductsState): string | null;
 };
 
@@ -103,6 +106,9 @@ export const getters: GetterTree<ProductsState, RootState> & Getters = {
 				.toLocaleLowerCase()
 				.includes(state.searchedProduct.toLocaleLowerCase())
 		);
+	},
+	singleProduct: (state) => (productId) => {
+		return state.products.find((product) => product.id === productId);
 	},
 	getSearchInput: (state) => {
 		if (state.searchedProduct.length > 0) {
